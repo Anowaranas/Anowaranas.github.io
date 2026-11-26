@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://anowaranas.github.io/sitemap.xml
+Sitemap: https://anowaranas.github.io/dimerhisab/sitemap.xml
+Sitemap: https://anowaranas.github.io/pokethisab/sitemap.xml
+Sitemap: https://anowaranas.github.io/bazardor/sitemap.xml
