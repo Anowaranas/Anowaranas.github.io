@@ -4,82 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anuwar Hossen — Android App Developer | শূন্য থেকে শুরু</title>
-<meta name="description" content="আনোয়ার হোসেন — বাংলাদেশি Android অ্যাপ ডেভেলপার। পকেট হিসাব, ডিমের হিসাব ও বাজার দর অ্যাপের নির্মাতা।">
-<link rel="canonical" href="https://anowaranas.github.io/">
+<meta name="description" content="আনোয়ার হোসেনের সব অ্যাপ একসাথে — পকেট হিসাব, ডিমের হিসাব ও বাজার দর। বাংলাদেশের মানুষের জন্য বানানো বাংলা অ্যান্ড্রয়েড অ্যাপ।">
+<meta property="og:title" content="Anuwar Hossen — সব অ্যাপ একসাথে">
+<meta property="og:description" content="পকেট হিসাব • ডিমের হিসাব • বাজার দর — শূন্য থেকে শুরু 🚀">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Anuwar Hossen — Android App Developer">
-<meta property="og:description" content="শূন্য থেকে শুরু 🚀 | পকেট হিসাব, ডিমের হিসাব ও বাজার দর-এর নির্মাতা">
 <meta property="og:url" content="https://anowaranas.github.io/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23047857'/><text x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-weight='bold'>A</text></svg>">
+<meta property="og:image" content="https://anowaranas.github.io/portfolio/images/photo.jpg">
+<link rel="icon" href="/portfolio/images/photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Hind Siliguri',sans-serif;background:linear-gradient(160deg,#052e22,#047857 55%,#10b981);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px}
-.wrap{max-width:880px;width:100%;text-align:center}
-h1{font-family:'Baloo Da 2',cursive;font-size:44px;line-height:1.2}
-.tag{opacity:.9;font-size:19px;margin:10px 0 34px}
-.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:28px 24px;backdrop-filter:blur(6px)}
-.card .emo{font-size:46px}
-.card h2{font-family:'Baloo Da 2',cursive;font-size:27px;margin:10px 0 6px}
-.card p{opacity:.88;font-size:16px;min-height:48px}
-.btns{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
-.btn{background:#fff;color:#065f46;font-weight:700;padding:10px 20px;border-radius:999px;text-decoration:none}
-.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
-.links{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.links a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);padding:8px 18px;border-radius:999px}
-footer{margin-top:30px;opacity:.75;font-size:14px}
-</style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-75L9Z9691P"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-75L9Z9691P');
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Anuwar Hossen — Apps","url":"https://anowaranas.github.io/","author":{"@type":"Person","name":"Anuwar Hossen","url":"https://anowaranas.github.io/portfolio/"}}
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75L9Z9691P"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-75L9Z9691P');</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --surface:rgba(255,255,255,.055); --border:rgba(255,255,255,.14);
+    --text:#f2f5fa; --muted:#b9c4d6; --gold:#ffc93c; --green:#2fbf71; --teal:#19b8a6; --violet:#7a5cff;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Hind Siliguri',sans-serif; color:var(--text); min-height:100vh; overflow-x:hidden;
+    background:linear-gradient(160deg,#16163a 0%,#0e2a3f 100%); background-attachment:fixed;
+  }
+  .aurora { position:fixed; inset:0; z-index:-1; overflow:hidden; }
+  .aurora i { position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; }
+  .aurora i:nth-child(1){ width:480px;height:480px; background:#2fbf71; top:-140px; left:-120px; animation:drift1 16s ease-in-out infinite alternate; }
+  .aurora i:nth-child(2){ width:420px;height:420px; background:#19b8a6; top:-100px; right:-110px; animation:drift2 20s ease-in-out infinite alternate; }
+  .aurora i:nth-child(3){ width:380px;height:380px; background:#7a5cff; bottom:-150px; left:32%; animation:drift1 22s ease-in-out infinite alternate-reverse; }
+  .aurora i:nth-child(4){ width:300px;height:300px; background:#ffc93c; bottom:-120px; right:12%; opacity:.28; animation:drift2 18s ease-in-out infinite alternate-reverse; }
+  @keyframes drift1 { from{transform:translate(0,0) scale(1);} to{transform:translate(90px,60px) scale(1.15);} }
+  @keyframes drift2 { from{transform:translate(0,0) scale(1.1);} to{transform:translate(-80px,70px) scale(.95);} }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 18px; }
+  header { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:rgba(13,19,38,.55); border-bottom:1px solid var(--border); }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:13px 0; }
+  .brand { font-family:'Baloo Da 2',cursive; font-weight:800; font-size:21px; }
+  .brand span { color:var(--gold); }
+  .nav a { color:var(--muted); text-decoration:none; font-weight:600; font-size:14.5px; margin-left:18px; transition:color .2s; }
+  .nav a:hover { color:var(--gold); }
+  .hero { text-align:center; padding:62px 0 10px; }
+  .avatar-ring { width:150px; height:150px; margin:0 auto; border-radius:50%; padding:5px;
+    background:conic-gradient(from 120deg,#2fbf71,#ffc93c,#19b8a6,#7a5cff,#2fbf71); animation:spin 9s linear infinite;
+    box-shadow:0 20px 55px rgba(0,0,0,.5); }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .avatar { width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; border:4px solid #12122e; }
+  .hero h1 { font-family:'Baloo Da 2',cursive; font-size:44px; font-weight:800; margin-top:22px; line-height:1.25;
+    background:linear-gradient(90deg,#7dffbe,#ffc93c,#7dffbe); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shine 5s linear infinite; }
+  @keyframes shine { to { background-position:200% center; } }
+  .hero .sub { color:var(--muted); font-size:16.5px; margin:12px auto 0; max-width:640px; line-height:1.65; }
+  .pill { display:inline-block; margin-top:16px; background:rgba(255,201,60,.13); border:1px solid rgba(255,201,60,.5);
+    color:var(--gold); font-weight:700; font-size:14px; padding:7px 18px; border-radius:999px; }
+  .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:24px; }
+  .btn { text-decoration:none; font-weight:700; font-size:15px; padding:12px 24px; border-radius:12px; transition:transform .2s ease, box-shadow .2s ease; display:inline-block; }
+  .btn:hover { transform:translateY(-3px); }
+  .btn-gold { background:linear-gradient(135deg,#ffd964,#ffb52e); color:#241c00; box-shadow:0 14px 30px -8px rgba(255,201,60,.55); }
+  .btn-ghost { background:var(--surface); color:var(--text); border:1.4px solid var(--border); }
+  section { padding:36px 0 4px; }
+  .sec-title { font-family:'Baloo Da 2',cursive; font-size:27px; font-weight:800; display:flex; align-items:center; gap:11px; margin-bottom:16px; }
+  .sec-title::before { content:""; width:5px; height:26px; border-radius:99px; background:linear-gradient(180deg,var(--green),var(--gold)); }
+  .card { background:var(--surface); border:1.4px solid var(--border); border-radius:20px; padding:22px; backdrop-filter:blur(10px); }
+  .apps { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .app-card { position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s; }
+  .app-card::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--green),var(--gold),var(--teal)); }
+  .app-card:hover { transform:translateY(-7px); box-shadow:0 26px 44px -18px rgba(0,0,0,.65); border-color:rgba(255,201,60,.45); }
+  .app-head { display:flex; align-items:center; gap:14px; margin-bottom:10px; }
+  .app-head img { width:58px; height:58px; border-radius:15px; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+  .app-head h3 { font-family:'Baloo Da 2',cursive; font-size:21px; font-weight:800; }
+  .status { font-size:12px; font-weight:700; padding:3px 11px; border-radius:999px; }
+  .st-live { background:rgba(47,191,113,.18); color:#5eeaa0; border:1px solid rgba(47,191,113,.5); }
+  .st-test { background:rgba(255,201,60,.14); color:var(--gold); border:1px solid rgba(255,201,60,.45); }
+  .app-card p { color:var(--muted); font-size:14.5px; line-height:1.65; min-height:72px; }
+  .app-links { display:flex; gap:9px; margin-top:13px; flex-wrap:wrap; }
+  .app-links a { text-decoration:none; font-size:13.5px; font-weight:700; padding:8px 15px; border-radius:10px; transition:transform .2s; }
+  .app-links a:hover { transform:translateY(-2px); }
+  .lnk-play { background:#101418; color:#fff; border:1px solid rgba(255,255,255,.25); }
+  .lnk-site { background:rgba(255,255,255,.08); color:var(--text); border:1px solid var(--border); }
+  .banner { text-align:center; padding:28px; }
+  .banner h3 { font-family:'Baloo Da 2',cursive; font-size:23px; margin-bottom:8px; }
+  .banner p { color:var(--muted); font-size:15px; margin-bottom:18px; }
+  .socials { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .socials a { text-decoration:none; color:var(--text); font-weight:700; font-size:14.5px; padding:11px 20px; border-radius:12px;
+    background:var(--surface); border:1.4px solid var(--border); transition:transform .2s, border-color .2s; }
+  .socials a:hover { transform:translateY(-3px); border-color:rgba(255,201,60,.45); }
+  footer { text-align:center; color:var(--muted); font-size:13.5px; padding:32px 0 38px; }
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.on { opacity:1; transform:none; }
+  @media (max-width:640px){ .hero h1{font-size:32px;} .nav a{margin-left:11px; font-size:13.5px;} }
+</style>
 </head>
 <body>
-<div class="wrap">
-  <h1>আনোয়ার হোসেন</h1>
-  <p class="tag">শূন্য থেকে শুরু 🚀 | Android App Developer 🇧🇩</p>
-  <div class="apps">
-    <div class="card">
-      <div class="emo">👛</div>
-      <h2>পকেট হিসাব</h2>
-      <p>দৈনিক আয়-ব্যয়, মাসিক বাজেট, বাকির খাতা ও ডিজিটাল ক্যাশ মেমোর স্মার্ট বাংলা অ্যাপ।</p>
-      <div class="btns">
-        <a class="btn" href="/pokethisab/">ওয়েবসাইট</a>
-        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.aistudio.pockethisab.mnsqrx" target="_blank" rel="noopener">Google Play</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="emo">🥚</div>
-      <h2>ডিমের হিসাব</h2>
-      <p>ডিমের আড়তদার ও পাইকারি ব্যবসায়ীদের জন্য ডিজিটাল খাতা, ক্যাশ মেমো ও মহাজন চালান অ্যাপ।</p>
-      <div class="btns">
-        <a class="btn" href="/dimerhisab/">ওয়েবসাইট</a>
-        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.aistudio.dimerhisab.egghub" target="_blank" rel="noopener">Google Play</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="emo">🧺</div>
-      <h2>বাজার দর</h2>
-      <p>ঢাকার প্রতিদিনের খুচরা ও পাইকারি বাজারদর — কৃষি বিপণন অধিদপ্তরের সরকারি তালিকা থেকে প্রতিদিন আপডেট।</p>
-      <div class="btns">
-        <a class="btn" href="/bazardor/">ওয়েবসাইট</a>
-        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.anowaranas.bazardor" target="_blank" rel="noopener">Google Play</a>
-      </div>
+<div class="aurora"><i></i><i></i><i></i><i></i></div>
+<header>
+  <div class="wrap nav">
+    <div class="brand">আনোয়ার <span>হোসেন</span></div>
+    <nav>
+      <a href="#apps">অ্যাপসমূহ</a><a href="/portfolio/">পোর্টফোলিও</a><a href="https://github.com/Anowaranas">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="avatar-ring"><img class="avatar" src="/portfolio/images/photo.jpg" alt="আনোয়ার হোসেন"></div>
+    <h1>আনোয়ার হোসেনের সব অ্যাপ একসাথে</h1>
+    <p class="sub">Android App Developer 🇧🇩 — বাংলাদেশের ছোট ব্যবসায়ী, খামারি আর সাধারণ মানুষের জন্য বানানো তিনটি বাংলা অ্যাপ: হিসাব-নিকাশ আর প্রতিদিনের বাজারদর, সবই সহজ বাংলায়।</p>
+    <div class="pill">🚀 শূন্য থেকে শুরু</div>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#apps">অ্যাপগুলো দেখুন</a>
+      <a class="btn btn-ghost" href="/portfolio/">👤 আমার পোর্টফোলিও</a>
     </div>
   </div>
-  <div class="links">
-    <a href="https://github.com/Anowaranas" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.facebook.com/kholanews" target="_blank" rel="noopener">শূন্য — Facebook পেজ</a>
-    <a href="mailto:anowar.hossain78699@gmail.com">ইমেইল</a>
-  </div>
-  <footer>© ২০২৬ Anuwar Hossen • ভালোবাসায় তৈরি, বাংলাদেশ থেকে</footer>
-</div>
+
+  <section id="apps">
+    <h2 class="sec-title">আমার অ্যাপসমূহ</h2>
+    <div class="apps">
+      <div class="card app-card reveal">
+        <div class="app-head">
+          <img src="/portfolio/images/pocket.png" alt="পকেট হিসাব আইকন">
+          <div><h3>পকেট হিসাব</h3><span class="status st-test">● টেস্টিং চলছে</span></div>
+        </div>
+        <p>দৈনিক আয়-ব্যয়, মাসিক বাজেট, বাকির খাতা ও ডিজিটাল ক্যাশ মেমোর স্মার্ট বাংলা অ্যাপ।</p>
+        <div class="app-links">
+          <a class="lnk-play" href="https://play.google.com/store/apps/details?id=com.aistudio.pockethisab.mnsqrx" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="lnk-site" href="https://anowaranas.github.io/pokethisab/" target="_blank" rel="noopener">🌐 ওয়েবসাইট</a>
+        </div>
+      </div>
+      <div class="card app-card reveal">
+        <div class="app-head">
+          <img src="/portfolio/images/dimer.jpg" alt="ডিমের হিসাব আইকন">
+          <div><h3>ডিমের হিসাব</h3><span class="status st-live">● Google Play-তে লাইভ</span></div>
+        </div>
+        <p>ডিমের আড়তদার ও পাইকারি ব্যবসায়ীদের জন্য ডিজিটাল খাতা, ক্যাশ মেমো ও মহাজন চালান অ্যাপ।</p>
+        <div class="app-links">
+          <a class="lnk-play" href="https://play.google.com/store/apps/details?id=com.aistudio.dimerhisab.egghub" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="lnk-site" href="https://anowaranas.github.io/dimerhisab/" target="_blank" rel="noopener">🌐 ওয়েবসাইট</a>
+        </div>
+      </div>
+      <div class="card app-card reveal">
+        <div class="app-head">
+          <img src="/portfolio/images/bazar.png" alt="বাজার দর আইকন">
+          <div><h3>বাজার দর</h3><span class="status st-test">● টেস্টিং চলছে</span></div>
+        </div>
+        <p>ঢাকার প্রতিদিনের খুচরা ও পাইকারি বাজারদর — কৃষি বিপণন অধিদপ্তরের সরকারি তালিকা থেকে প্রতিদিন আপডেট।</p>
+        <div class="app-links">
+          <a class="lnk-play" href="https://play.google.com/store/apps/details?id=com.anowaranas.bazardor" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="lnk-site" href="https://anowaranas.github.io/bazardor/" target="_blank" rel="noopener">🌐 ওয়েবসাইট</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card banner reveal">
+      <h3>আমার সম্পর্কে জানুন</h3>
+      <p>শূন্য থেকে শুরু করে তিনটি অ্যাপ বানানোর গল্প, আমার যাত্রা আর যোগাযোগের সব তথ্য পাবেন পোর্টফোলিওতে।</p>
+      <a class="btn btn-gold" href="/portfolio/">পোর্টফোলিও দেখুন →</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title">ফলো করুন</h2>
+    <div class="socials">
+      <a href="https://www.youtube.com/@AIDiyeAy" target="_blank" rel="noopener">▶️ YouTube</a>
+      <a href="https://www.tiktok.com/@lost78699" target="_blank" rel="noopener">🎵 TikTok</a>
+      <a href="https://facebook.com/anuwar78699" target="_blank" rel="noopener">📘 Facebook</a>
+      <a href="https://github.com/Anowaranas" target="_blank" rel="noopener">💻 GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer>© ২০২৬ আনোয়ার হোসেন • শূন্য থেকে শুরু 🚀 • ঢাকা, বাংলাদেশ</footer>
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
