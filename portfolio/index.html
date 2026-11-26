@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আনোয়ার হোসেন — Android App Developer | শূন্য থেকে শুরু</title>
+<meta name="description" content="আনোয়ার হোসেন — বাংলাদেশি Android App Developer ও পকেট হিসাব, ডিমের হিসাব ও বাজার দর অ্যাপের নির্মাতা। শূন্য থেকে শুরু।">
+<meta property="og:title" content="আনোয়ার হোসেন — Android App Developer">
+<meta property="og:description" content="পকেট হিসাব, ডিমের হিসাব ও বাজার দর — বাংলাদেশের মানুষের জন্য বানানো অ্যাপ। শূন্য থেকে শুরু 🚀">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://anowaranas.github.io/portfolio/">
+<meta property="og:image" content="https://anowaranas.github.io/portfolio/images/photo.jpg">
+<link rel="icon" href="images/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Anuwar Hossen","alternateName":"আনোয়ার হোসেন","jobTitle":"Android App Developer","url":"https://anowaranas.github.io/portfolio/","image":"https://anowaranas.github.io/portfolio/images/photo.jpg","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"sameAs":["https://facebook.com/anuwar78699","https://github.com/Anowaranas","https://www.youtube.com/@AIDiyeAy","https://www.tiktok.com/@lost78699"]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75L9Z9691P"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-75L9Z9691P');</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#10102c; --surface:rgba(255,255,255,.06); --border:rgba(255,255,255,.14);
+    --text:#f2f5fa; --muted:#b9c4d6; --gold:#ffc93c; --green:#2fbf71; --teal:#19b8a6;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Hind Siliguri',sans-serif; color:var(--text); min-height:100vh;
+    background:
+      radial-gradient(700px 480px at 12% 4%, rgba(47,191,113,.28), transparent 60%),
+      radial-gradient(760px 520px at 88% 12%, rgba(25,184,166,.22), transparent 60%),
+      radial-gradient(820px 620px at 78% 88%, rgba(255,201,60,.14), transparent 60%),
+      radial-gradient(700px 560px at 8% 92%, rgba(90,70,200,.25), transparent 60%),
+      linear-gradient(160deg,#16163a 0%,#0e2a3f 100%);
+    background-attachment:fixed;
+  }
+  .wrap { max-width:1020px; margin:0 auto; padding:0 18px; }
+  header { position:sticky; top:0; z-index:50; backdrop-filter:blur(14px); background:rgba(14,20,40,.55); border-bottom:1px solid var(--border); }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:13px 0; }
+  .brand { font-family:'Baloo Da 2',cursive; font-weight:800; font-size:21px; }
+  .brand span { color:var(--gold); }
+  .nav a { color:var(--muted); text-decoration:none; font-weight:600; font-size:14.5px; margin-left:18px; }
+  .nav a:hover { color:var(--text); }
+  .hero { text-align:center; padding:64px 0 30px; }
+  .avatar {
+    width:168px; height:168px; border-radius:50%; object-fit:cover;
+    border:4px solid rgba(255,201,60,.85); box-shadow:0 18px 50px rgba(0,0,0,.45), 0 0 0 10px rgba(255,255,255,.05);
+  }
+  .hero h1 { font-family:'Baloo Da 2',cursive; font-size:46px; font-weight:800; margin-top:22px; line-height:1.2;
+    background:linear-gradient(90deg,#7dffbe,#ffc93c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero .role { font-size:19px; font-weight:600; color:var(--text); margin-top:6px; }
+  .hero .tag { color:var(--muted); font-size:16px; margin:12px auto 0; max-width:620px; line-height:1.65; }
+  .pill { display:inline-block; margin-top:16px; background:rgba(255,201,60,.14); border:1px solid rgba(255,201,60,.5);
+    color:var(--gold); font-weight:700; font-size:14px; padding:7px 18px; border-radius:999px; }
+  .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
+  .btn { text-decoration:none; font-weight:700; font-size:15px; padding:12px 24px; border-radius:12px; transition:transform .2s ease; display:inline-block; }
+  .btn:hover { transform:translateY(-3px); }
+  .btn-gold { background:var(--gold); color:#241c00; box-shadow:0 12px 26px -8px rgba(255,201,60,.55); }
+  .btn-ghost { background:var(--surface); color:var(--text); border:1.4px solid var(--border); }
+  section { padding:38px 0 6px; }
+  .sec-title { font-family:'Baloo Da 2',cursive; font-size:27px; font-weight:800; display:flex; align-items:center; gap:11px; margin-bottom:16px; }
+  .sec-title::before { content:""; width:5px; height:26px; border-radius:99px; background:linear-gradient(180deg,var(--green),var(--gold)); }
+  .card { background:var(--surface); border:1.4px solid var(--border); border-radius:20px; padding:22px; backdrop-filter:blur(8px); }
+  .about p { color:var(--muted); font-size:16px; line-height:1.75; }
+  .about p + p { margin-top:10px; }
+  .about strong { color:var(--text); }
+  .apps { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .app-card { transition:transform .25s ease, box-shadow .25s ease; }
+  .app-card:hover { transform:translateY(-6px); box-shadow:0 22px 40px -18px rgba(0,0,0,.6); }
+  .app-head { display:flex; align-items:center; gap:14px; margin-bottom:10px; }
+  .app-head img { width:58px; height:58px; border-radius:15px; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+  .app-head h3 { font-family:'Baloo Da 2',cursive; font-size:21px; font-weight:800; }
+  .status { font-size:12px; font-weight:700; padding:3px 11px; border-radius:999px; }
+  .st-live { background:rgba(47,191,113,.18); color:#5eeaa0; border:1px solid rgba(47,191,113,.5); }
+  .st-test { background:rgba(255,201,60,.14); color:var(--gold); border:1px solid rgba(255,201,60,.45); }
+  .app-card p { color:var(--muted); font-size:14.5px; line-height:1.65; min-height:72px; }
+  .app-links { display:flex; gap:9px; margin-top:13px; flex-wrap:wrap; }
+  .app-links a { text-decoration:none; font-size:13.5px; font-weight:700; padding:8px 15px; border-radius:10px; }
+  .lnk-play { background:#101418; color:#fff; border:1px solid rgba(255,255,255,.25); }
+  .lnk-site { background:rgba(255,255,255,.08); color:var(--text); border:1px solid var(--border); }
+  .socials { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  .soc { display:flex; align-items:center; gap:13px; text-decoration:none; color:var(--text); transition:transform .2s ease; }
+  .soc:hover { transform:translateY(-4px); }
+  .soc .ic { width:46px; height:46px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:21px; flex:0 0 auto; }
+  .soc h4 { font-size:16px; font-weight:700; }
+  .soc small { color:var(--muted); font-size:13px; }
+  .journey { display:grid; gap:12px; }
+  .step { display:flex; gap:15px; align-items:flex-start; }
+  .step .n { font-family:'Baloo Da 2',cursive; font-weight:800; font-size:19px; width:42px; height:42px; flex:0 0 auto;
+    border-radius:50%; background:linear-gradient(135deg,var(--green),var(--teal)); color:#06251b;
+    display:flex; align-items:center; justify-content:center; }
+  .step h4 { font-size:16.5px; font-weight:700; }
+  .step p { color:var(--muted); font-size:14.5px; line-height:1.6; }
+  .contact { text-align:center; padding:26px; }
+  .contact h3 { font-family:'Baloo Da 2',cursive; font-size:23px; margin-bottom:8px; }
+  .contact p { color:var(--muted); font-size:15px; margin-bottom:18px; }
+  footer { text-align:center; color:var(--muted); font-size:13.5px; padding:30px 0 36px; }
+  @media (max-width:640px){ .hero h1{font-size:34px;} .nav a{margin-left:11px; font-size:13.5px;} }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">আনোয়ার <span>হোসেন</span></div>
+    <nav>
+      <a href="#about">পরিচিতি</a><a href="#apps">আমার অ্যাপ</a><a href="#journey">যাত্রা</a><a href="#contact">যোগাযোগ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <img class="avatar" src="images/photo.jpg" alt="আনোয়ার হোসেন">
+    <h1>আনোয়ার হোসেন</h1>
+    <div class="role">Android App Developer 🇧🇩 • Founder</div>
+    <p class="tag">বাংলাদেশের ছোট ব্যবসায়ী, খামারি আর সাধারণ মানুষের প্রতিদিনের হিসাব-নিকাশ সহজ করতে অ্যাপ বানাই — যেন প্রযুক্তি সবার হাতের মুঠোয় থাকে।</p>
+    <div class="pill">🚀 শূন্য থেকে শুরু</div>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#apps">আমার অ্যাপগুলো দেখুন</a>
+      <a class="btn btn-ghost" href="https://anowaranas.github.io/">সব অ্যাপের হাব সাইট</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2 class="sec-title">পরিচিতি</h2>
+    <div class="card about">
+      <p>আমি <strong>আনোয়ার হোসেন</strong> — ঢাকায় থাকি, বাড়ি লক্ষ্মীপুরে। আমি একজন Android অ্যাপ ডেভেলপার ও <strong>পকেট হিসাব</strong>, <strong>ডিমের হিসাব</strong> ও <strong>বাজার দর</strong> — এই তিনটি অ্যাপের নির্মাতা (Founder)।</p>
+      <p>আমার বিশ্বাস — ভালো কিছু বানাতে বড় জায়গা থেকে শুরু করতে হয় না; <strong>শূন্য থেকে শুরু</strong> করেই প্রতিদিন একটু একটু করে এগিয়ে যাওয়া যায়। সেই যাত্রার গল্প আর প্রতিদিনের AI টিপস শেয়ার করি আমার YouTube ও TikTok চ্যানেলে — <strong>“AI দিয়ে আয় | শূন্য থেকে শুরু”</strong>।</p>
+    </div>
+  </section>
+
+  <section id="apps">
+    <h2 class="sec-title">আমার অ্যাপসমূহ</h2>
+    <div class="apps">
+      <div class="card app-card">
+        <div class="app-head">
+          <img src="images/dimer.jpg" alt="ডিমের হিসাব আইকন">
+          <div><h3>ডিমের হিসাব</h3><span class="status st-live">● Google Play-তে লাইভ</span></div>
+        </div>
+        <p>ডিম ব্যবসায়ীদের জন্য সম্পূর্ণ হিসাবের অ্যাপ — ডিজিটাল ক্যাশ মেমো, মহাজনের ক্রয় ও চালান, পার্টি খাতা, PDF শেয়ার আর ক্লাউড ব্যাকআপ।</p>
+        <div class="app-links">
+          <a class="lnk-play" href="https://play.google.com/store/apps/details?id=com.aistudio.dimerhisab.egghub" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="lnk-site" href="https://anowaranas.github.io/dimerhisab/" target="_blank" rel="noopener">🌐 ওয়েবসাইট</a>
+        </div>
+      </div>
+      <div class="card app-card">
+        <div class="app-head">
+          <img src="images/pocket.png" alt="পকেট হিসাব আইকন">
+          <div><h3>পকেট হিসাব</h3><span class="status st-test">● টেস্টিং চলছে</span></div>
+        </div>
+        <p>ব্যক্তিগত ও ছোট ব্যবসার টাকার হিসাব — স্মার্ট মাসিক বাজেট প্ল্যানার, ৪টি ওয়ালেট ও ট্রান্সফার, ডিজিটাল ক্যাশ মেমো, বাকির খাতা ও লোন কিস্তি।</p>
+        <div class="app-links">
+          <a class="lnk-play" href="https://play.google.com/store/apps/details?id=com.aistudio.pockethisab.mnsqrx" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="lnk-site" href="https://anowaranas.github.io/pokethisab/" target="_blank" rel="noopener">🌐 ওয়েবসাইট</a>
+        </div>
+      </div>
+      <div class="card app-card">
+        <div class="app-head">
+          <img src="images/bazar.png" alt="বাজার দর আইকন">
+          <div><h3>বাজার দর</h3><span class="status st-test">● টেস্টিং চলছে</span></div>
+        </div>
+        <p>ঢাকার প্রতিদিনের খুচরা ও পাইকারি বাজারদর — কৃষি বিপণন অধিদপ্তরের (DAM) সরকারি তালিকা থেকে প্রতিদিন আপডেট, দামের ওঠানামাসহ।</p>
+        <div class="app-links">
+          <a class="lnk-play" href="https://play.google.com/store/apps/details?id=com.anowaranas.bazardor" target="_blank" rel="noopener">▶ Google Play</a>
+          <a class="lnk-site" href="https://anowaranas.github.io/bazardor/" target="_blank" rel="noopener">🌐 ওয়েবসাইট</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <h2 class="sec-title">শূন্য থেকে শুরু — আমার যাত্রা</h2>
+    <div class="journey">
+      <div class="card step"><div class="n">১</div><div><h4>শুরুটা শূন্য থেকে</h4><p>বড় কোনো পুঁজি বা টিম ছাড়াই, শুধু শেখার আগ্রহ আর ধৈর্য নিয়ে অ্যাপ বানানো শুরু করি।</p></div></div>
+      <div class="card step"><div class="n">২</div><div><h4>প্রথম অ্যাপ — ডিমের হিসাব</h4><p>ডিম ব্যবসায়ীদের কাগজের খাতার ঝামেলা দেখে বানাই প্রথম অ্যাপ; সেটাই আজ Google Play-তে লাইভ।</p></div></div>
+      <div class="card step"><div class="n">৩</div><div><h4>পকেট হিসাব ও বাজার দর</h4><p>এরপর আসে ব্যক্তিগত হিসাবের অ্যাপ পকেট হিসাব, আর প্রতিদিনের বাজারদরের অ্যাপ বাজার দর।</p></div></div>
+      <div class="card step"><div class="n">৪</div><div><h4>এখন — কন্টেন্ট ও কমিউনিটি</h4><p>প্রতিদিন YouTube ও TikTok-এ AI টিপস, অনলাইন আয়ের বাস্তব ধাপ আর মোবাইল কৌশল শেয়ার করি — যাতে অন্যরাও শূন্য থেকে শুরু করতে পারে।</p></div></div>
+    </div>
+  </section>
+
+  <section id="social">
+    <h2 class="sec-title">আমাকে ফলো করুন</h2>
+    <div class="socials">
+      <a class="card soc" href="https://www.youtube.com/@AIDiyeAy" target="_blank" rel="noopener"><div class="ic" style="background:rgba(255,60,60,.16)">▶️</div><div><h4>YouTube</h4><small>AI দিয়ে আয় | শূন্য থেকে শুরু</small></div></a>
+      <a class="card soc" href="https://www.tiktok.com/@lost78699" target="_blank" rel="noopener"><div class="ic" style="background:rgba(255,255,255,.1)">🎵</div><div><h4>TikTok</h4><small>প্রতিদিনের AI টিপস ও কৌশল</small></div></a>
+      <a class="card soc" href="https://facebook.com/anuwar78699" target="_blank" rel="noopener"><div class="ic" style="background:rgba(24,119,242,.18)">📘</div><div><h4>Facebook</h4><small>Anuwar Hossen</small></div></a>
+      <a class="card soc" href="https://github.com/Anowaranas" target="_blank" rel="noopener"><div class="ic" style="background:rgba(255,255,255,.1)">💻</div><div><h4>GitHub</h4><small>@Anowaranas</small></div></a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card contact">
+      <h3>যোগাযোগ করুন</h3>
+      <p>অ্যাপ নিয়ে মতামত, সহযোগিতা বা যেকোনো পরামর্শের জন্য ইমেইল করুন — প্রতিটা বার্তাই পড়ি।</p>
+      <a class="btn btn-gold" href="mailto:anowar.hossain78699@gmail.com">✉️ ইমেইল পাঠান</a>
+    </div>
+  </section>
+</main>
+
+<footer>© ২০২৬ আনোয়ার হোসেন • শূন্য থেকে শুরু 🚀 • ঢাকা, বাংলাদেশ</footer>
+</body>
+</html>
