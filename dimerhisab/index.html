@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ডিমের হিসাব — ডিজিটাল আড়ত খাতা ও ক্যাশ মেমো</title>
+  <meta name="description" content="ডিমের আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের জন্য আধুনিক ডিজিটাল হিসাব খাতা, ক্যাশ মেমো ও মহাজন চালান অ্যাপ।" />
+  <link rel="canonical" href="https://anowaranas.github.io/dimerhisab/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ডিমের হিসাব — ডিজিটাল আড়ত খাতা ও ক্যাশ মেমো" />
+  <meta property="og:description" content="ডিমের আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের জন্য ডিজিটাল হিসাব খাতা, ক্যাশ মেমো ও মহাজন চালান অ্যাপ। Google Play থেকে ফ্রি ডাউনলোড করুন।" />
+  <meta property="og:url" content="https://anowaranas.github.io/dimerhisab/" />
+  <meta property="og:image" content="https://anowaranas.github.io/dimerhisab/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#047857" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='74' font-size='66' text-anchor='middle'>🥚</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #EDF4F1;
+      --bg-grad: linear-gradient(160deg, #F4F7FF 0%, #E9F7F1 52%, #FDF6E0 100%);
+      --surface: rgba(255,255,255,.78);
+      --surface-alt: rgba(255,255,255,.6);
+      --header: #0C2436;
+      --body: #22344A;
+      --muted: #52657A;
+      --border: rgba(12,60,45,.16);
+      --emerald: #047857;
+      --gold: #FFC93C;
+      --gold-grad: linear-gradient(135deg, #FFD964 0%, #FFB52E 100%);
+      --grad: linear-gradient(120deg, #047857 0%, #059669 50%, #10B981 100%);
+      --grad-text: linear-gradient(90deg, #047857 0%, #059669 45%, #D97706 100%);
+      --header-bg: rgba(255,255,255,.72);
+      --shadow-sm: 0 2px 10px rgba(15,60,45,.07);
+      --shadow-md: 0 16px 34px -12px rgba(4,80,55,.25);
+      --shadow-lg: 0 30px 55px -20px rgba(4,80,55,.35);
+      --mint-bg: rgba(209,250,229,.55);
+      --mint-bd: rgba(4,120,87,.35);
+      --b0-bg: #ECFDF5; --b0-bd: #6EE7B7; --b0-ac: #047857; --b0-tag: #D1FAE5; --b0-tt: #064E3B;
+      --b1-bg: #EFF6FF; --b1-bd: #93C5FD; --b1-ac: #1D4ED8; --b1-tag: #DBEAFE; --b1-tt: #1E3A8A;
+      --b2-bg: #FFFBEB; --b2-bd: #FCD34D; --b2-ac: #B45309; --b2-tag: #FEF3C7; --b2-tt: #78350F;
+      --b3-bg: #F5F3FF; --b3-bd: #C4B5FD; --b3-ac: #6D28D9; --b3-tag: #EDE9FE; --b3-tt: #4C1D95;
+      --b4-bg: #ECFEFF; --b4-bd: #67E8F9; --b4-ac: #0E7490; --b4-tag: #CFFAFE; --b4-tt: #155E75;
+      --b5-bg: #FFF1F2; --b5-bd: #FDA4AF; --b5-ac: #BE123C; --b5-tag: #FFE4E6; --b5-tt: #881337;
+    }
+    body.dark {
+      --bg: #0E2A3F;
+      --bg-grad: linear-gradient(160deg, #16163A 0%, #0E2A3F 100%);
+      --surface: rgba(255,255,255,.055);
+      --surface-alt: rgba(255,255,255,.09);
+      --header: #F2F5FA;
+      --body: #E6EDF7;
+      --muted: #B9C4D6;
+      --border: rgba(255,255,255,.14);
+      --emerald: #34D399;
+      --grad-text: linear-gradient(90deg, #7DFFBE 0%, #2FBF71 45%, #FFC93C 100%);
+      --header-bg: rgba(13,19,38,.55);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,.35);
+      --shadow-md: 0 18px 36px -12px rgba(0,0,0,.6);
+      --shadow-lg: 0 30px 55px -18px rgba(0,0,0,.75);
+      --mint-bg: rgba(13,60,46,.42);
+      --mint-bd: rgba(52,211,153,.4);
+      --b0-bg: rgba(16,185,129,.10); --b0-bd: rgba(16,185,129,.45); --b0-ac: #34D399; --b0-tag: rgba(16,185,129,.22); --b0-tt: #D9FBEA;
+      --b1-bg: rgba(59,130,246,.10); --b1-bd: rgba(59,130,246,.45); --b1-ac: #60A5FA; --b1-tag: rgba(59,130,246,.22); --b1-tt: #E3EEFF;
+      --b2-bg: rgba(245,158,11,.10); --b2-bd: rgba(245,158,11,.45); --b2-ac: #FBBF24; --b2-tag: rgba(245,158,11,.22); --b2-tt: #FFF3D6;
+      --b3-bg: rgba(139,92,246,.12); --b3-bd: rgba(139,92,246,.45); --b3-ac: #A78BFA; --b3-tag: rgba(139,92,246,.24); --b3-tt: #EFE9FF;
+      --b4-bg: rgba(6,182,212,.10); --b4-bd: rgba(6,182,212,.45); --b4-ac: #22D3EE; --b4-tag: rgba(6,182,212,.22); --b4-tt: #DFFBFF;
+      --b5-bg: rgba(244,63,94,.10); --b5-bd: rgba(244,63,94,.45); --b5-ac: #FB7185; --b5-tag: rgba(244,63,94,.22); --b5-tt: #FFE9ED;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hind Siliguri', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      background-image: var(--bg-grad);
+      background-attachment: fixed;
+      color: var(--body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color .4s ease, color .4s ease;
+    }
+    ::selection { background: #059669; color: #fff; }
+    h1, h2, h3, .brand-title { font-family: 'Baloo Da 2', 'Hind Siliguri', sans-serif; }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 0 18px; }
+
+    /* ============ অরোরা ব্যাকগ্রাউন্ড ============ */
+    .aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+    .aurora i { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .5; }
+    body:not(.dark) .aurora i { opacity: .3; }
+    .aurora i:nth-child(1) { width: 480px; height: 480px; background: #2FBF71; top: -140px; left: -120px; animation: drift1 16s ease-in-out infinite alternate; }
+    .aurora i:nth-child(2) { width: 420px; height: 420px; background: #19B8A6; top: -100px; right: -110px; animation: drift2 20s ease-in-out infinite alternate; }
+    .aurora i:nth-child(3) { width: 380px; height: 380px; background: #7A5CFF; bottom: -150px; left: 32%; animation: drift1 22s ease-in-out infinite alternate-reverse; }
+    .aurora i:nth-child(4) { width: 300px; height: 300px; background: #FFC93C; bottom: -120px; right: 12%; opacity: .28; animation: drift2 18s ease-in-out infinite alternate-reverse; }
+    @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(90px,60px) scale(1.15); } }
+    @keyframes drift2 { from { transform: translate(0,0) scale(1.1); } to { transform: translate(-80px,70px) scale(.95); } }
+    @keyframes shine { to { background-position: 200% center; } }
+
+    /* ============ হেডার ============ */
+    .topbar {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--header-bg);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .topbar-inner { padding: 13px 0 11px; display: flex; flex-direction: column; gap: 11px; }
+    .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand-left { display: flex; align-items: center; gap: 12px; }
+    .app-icon {
+      width: 47px; height: 47px; border-radius: 15px;
+      background: var(--grad);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 23px;
+      box-shadow: 0 9px 18px -6px rgba(4,120,87,.5), 0 0 0 3px rgba(255,201,60,.4);
+    }
+    .brand-title {
+      font-size: 23px; font-weight: 800; line-height: 1.15;
+      background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .brand-sub { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #10B981; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16,185,129,.45); } 70% { box-shadow: 0 0 0 8px rgba(16,185,129,0); } 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); } }
+    .theme-btn {
+      border: 1.4px solid var(--border); background: var(--surface-alt); color: var(--header);
+      border-radius: 99px; padding: 8px 15px; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      transition: transform .25s ease, box-shadow .25s ease; box-shadow: var(--shadow-sm);
+    }
+    .theme-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .capsule-nav {
+      background: var(--surface-alt); border: 1.4px solid var(--border);
+      border-radius: 15px; padding: 4px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;
+    }
+    .nav-pill {
+      text-decoration: none; text-align: center; padding: 8px 4px; border-radius: 11px;
+      font-size: 13.5px; font-weight: 700; color: var(--header);
+      transition: all .25s ease;
+    }
+    .nav-pill.active, .nav-pill:hover {
+      background: var(--grad);
+      color: #FFFFFF; box-shadow: 0 4px 10px rgba(4,120,87,.3);
+      transform: translateY(-1px);
+    }
+
+    main { padding: 26px 0 48px; display: flex; flex-direction: column; gap: 26px; }
+
+    /* ============ হিরো ============ */
+    .hero {
+      background: var(--mint-bg); border: 1.5px solid var(--mint-bd); border-radius: 24px;
+      padding: 30px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 24px; align-items: center;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; width: 340px; height: 340px; border-radius: 50%;
+      background: #34d399; filter: blur(100px); opacity: .35; top: -150px; right: -100px; pointer-events: none;
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%;
+      background: #fbbf24; filter: blur(100px); opacity: .28; bottom: -140px; left: -80px; pointer-events: none;
+      animation: drift 18s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(-34px,30px) scale(1.12); } }
+    .hero > * { position: relative; z-index: 1; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--b0-tag); color: var(--b0-tt);
+      border: 1px solid var(--b0-bd); padding: 5px 13px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 700; margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: 31px; line-height: 1.28; margin-bottom: 10px; font-weight: 800;
+      background: var(--grad-text); background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: shine 6s linear infinite;
+    }
+    .hero p { font-size: 15px; color: var(--muted); margin-bottom: 18px; font-weight: 500; }
+    .cta-row { display: flex; gap: 11px; flex-wrap: wrap; }
+    .cta-row > a { transition: transform .25s ease, box-shadow .25s ease; }
+    .cta-row > a:hover { transform: translateY(-3px); }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none; background: var(--gold-grad);
+      color: #241C00; padding: 12px 21px; border-radius: 99px;
+      font-size: 14.5px; font-weight: 700; box-shadow: 0 12px 24px -8px rgba(255,180,40,.55);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 32px -8px rgba(255,180,40,.65); }
+    .btn-soft {
+      display: inline-flex; align-items: center;
+      text-decoration: none; background: var(--surface); color: var(--header);
+      border: 1.4px solid var(--border); padding: 12px 18px; border-radius: 99px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      font-size: 14px; font-weight: 700; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .btn-soft:hover { transform: translateY(-3px); border-color: rgba(255,201,60,.6); box-shadow: var(--shadow-sm); }
+
+    /* প্রিভিউ কার্ড */
+    .preview {
+      background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: 16px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-lg); animation: floaty 6s ease-in-out infinite;
+    }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .preview-head { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 700; color: var(--muted); margin-bottom: 11px; }
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 9px; }
+    .kpi { border-radius: 14px; padding: 11px; border: 1.3px solid; transition: transform .25s ease; }
+    .kpi:hover { transform: translateY(-3px); }
+    .kpi small { display: block; font-size: 11.5px; font-weight: 600; }
+    .kpi strong { font-family: 'Baloo Da 2', sans-serif; font-size: 17.5px; font-weight: 700; }
+    .egg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .egg-pill {
+      background: var(--surface-alt); border: 1px solid var(--border); border-radius: 11px;
+      padding: 7px 9px; font-size: 12px; font-weight: 700; color: var(--header);
+      display: flex; justify-content: space-between;
+    }
+
+    /* ============ সেকশন ============ */
+    .sec-title { font-size: 22px; font-weight: 800; color: var(--header); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .bar { width: 5px; height: 24px; border-radius: 999px; background: linear-gradient(180deg, #2FBF71, #FFC93C); box-shadow: 0 3px 8px rgba(4,120,87,.4); }
+    #screenshots h2, #faq h2 { font-family: 'Baloo Da 2', 'Hind Siliguri', sans-serif; font-size: 26px; font-weight: 800; color: var(--header); margin-bottom: 6px; }
+    #screenshots p { color: var(--muted); }
+    #screenshots img { transition: transform .3s ease; }
+    #screenshots img:hover { transform: translateY(-6px); }
+    #faq details { background: var(--surface); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); }
+    #faq summary { color: var(--header); }
+    #faq details p { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
+    .box {
+      border-radius: 19px; padding: 19px; border: 1.5px solid;
+      position: relative; overflow: hidden;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .box::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+      background: linear-gradient(90deg, #2FBF71, #FFC93C, #19B8A6);
+    }
+    .box:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .box-head { display: flex; align-items: center; gap: 11px; margin-bottom: 7px; }
+    .ic { width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.05); }
+    .box h3 { font-size: 16.5px; font-weight: 700; }
+    .box p { font-size: 14px; color: var(--muted); font-weight: 500; }
+    .b0 { background: var(--b0-bg); border-color: var(--b0-bd); } .b0 .ic { background: var(--b0-tag); } .b0 h3, .b0 strong, .b0 small { color: var(--b0-tt); }
+    .b1 { background: var(--b1-bg); border-color: var(--b1-bd); } .b1 .ic { background: var(--b1-tag); } .b1 h3, .b1 strong, .b1 small { color: var(--b1-tt); }
+    .b2 { background: var(--b2-bg); border-color: var(--b2-bd); } .b2 .ic { background: var(--b2-tag); } .b2 h3, .b2 strong, .b2 small { color: var(--b2-tt); }
+    .b3 { background: var(--b3-bg); border-color: var(--b3-bd); } .b3 .ic { background: var(--b3-tag); } .b3 h3 { color: var(--b3-tt); }
+    .b4 { background: var(--b4-bg); border-color: var(--b4-bd); } .b4 .ic { background: var(--b4-tag); } .b4 h3 { color: var(--b4-tt); }
+    .b5 { background: var(--b5-bg); border-color: var(--b5-bd); } .b5 .ic { background: var(--b5-tag); } .b5 h3, .b5 strong, .b5 small { color: var(--b5-tt); }
+
+    /* প্রাইভেসি */
+    .policy {
+      background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px; padding: 24px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+    }
+    .policy h3 { font-size: 16.5px; color: var(--emerald); margin: 15px 0 5px; }
+    .policy p, .policy li { font-size: 14.5px; color: var(--muted); }
+    .policy ul { padding-left: 20px; margin-top: 5px; }
+    .policy a, footer a { color: var(--emerald); font-weight: 700; text-decoration: none; }
+    .policy a:hover, footer a:hover { text-decoration: underline; }
+
+    /* যোগাযোগ */
+    .contact {
+      background: var(--b1-bg); border: 1.5px solid var(--b1-bd); border-radius: 20px;
+      padding: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 13px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .contact:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .contact h3 { font-size: 18px; color: var(--b1-tt); }
+    .contact p { font-size: 14px; color: var(--muted); font-weight: 500; }
+
+    footer {
+      background: var(--surface); border-top: 1.5px solid var(--border);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      padding: 22px 16px; text-align: center; font-size: 13.5px; color: var(--muted); font-weight: 500;
+    }
+    .maker { margin-top: 7px; font-size: 14px; }
+    .maker a {
+      background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+      font-weight: 800;
+    }
+    .maker a:hover { text-decoration: underline; }
+
+    /* ============ স্ক্রল রিভিল ============ */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .grid .box:nth-child(2) { transition-delay: .07s; }
+    .grid .box:nth-child(3) { transition-delay: .14s; }
+    .grid .box:nth-child(4) { transition-delay: .07s; }
+    .grid .box:nth-child(5) { transition-delay: .14s; }
+    .grid .box:nth-child(6) { transition-delay: .21s; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 20px; }
+      .hero h1 { font-size: 25px; }
+      .brand-title { font-size: 20px; }
+      .nav-pill { font-size: 11.5px; padding: 8px 2px; }
+      section { scroll-margin-top: 130px; }
+    }
+    section { scroll-margin-top: 132px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+  </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ডিমের হিসাব","operatingSystem":"ANDROID","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"},"url":"https://anowaranas.github.io/dimerhisab/","downloadUrl":"https://play.google.com/store/apps/details?id=com.aistudio.dimerhisab.egghub","author":{"@type":"Person","name":"Anuwar Hossen"}}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75L9Z9691P"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75L9Z9691P');
+</script>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand-row">
+        <div class="brand-left">
+          <div class="app-icon">🥚</div>
+          <div>
+            <div class="brand-title">ডিমের হিসাব</div>
+            <div class="brand-sub"><span class="dot"></span> ডিজিটাল আড়ত খাতা • অফলাইন ও ক্লাউড সিঙ্ক</div>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeBtn" type="button">🌙 ডার্ক</button>
+      </div>
+      <nav class="capsule-nav" aria-label="প্রধান মেনু">
+        <a class="nav-pill active" href="#home">হোম</a>
+        <a class="nav-pill" href="#features">সুবিধাসমূহ</a>
+        <a class="nav-pill" href="#privacy">প্রাইভেসি</a>
+        <a class="nav-pill" href="#contact">যোগাযোগ</a>
+        <a class="nav-pill" href="https://anowaranas.github.io/portfolio/" target="_blank" rel="noopener">👤 পোর্টফোলিও</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="home" class="hero reveal in">
+      <div>
+        <span class="chip">আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের অ্যাপ</span>
+        <h1>আপনার ডিমের ব্যবসার শতভাগ নিখুঁত ডিজিটাল খাতা</h1>
+        <p>কাগজের খাতার ঝামেলা ছেড়ে প্রতিদিনকার ডিম বিক্রি, মহাজনের চালান, নগদ জমা, পার্টি ও মহাজন বকেয়া হিসাব রাখুন এক অ্যাপে।</p>
+        <div class="cta-row">
+          <a href="https://play.google.com/store/apps/details?id=com.aistudio.dimerhisab.egghub" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:#101418;color:#fff;padding:10px 26px 10px 20px;border-radius:12px;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.28);font-family:inherit"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M5 3.9v16.2c0 .8.9 1.3 1.6.9l13.4-8.1c.6-.4.6-1.4 0-1.8L6.6 3C5.9 2.6 5 3.1 5 3.9z"/></svg><span style="display:flex;flex-direction:column;line-height:1.15;text-align:left"><small style="font-size:11px;opacity:.75;letter-spacing:.4px">ডাউনলোড করুন</small><strong style="font-size:19px">Google Play</strong></span></a>
+          <a class="btn-soft" href="#privacy">Privacy Policy</a>
+        </div>
+      </div>
+
+      <div class="preview" aria-label="অ্যাপ ড্যাশবোর্ড প্রিভিউ">
+        <div class="preview-head"><span>আজকের হিসাব প্রিভিউ</span><span style="color:#047857;">লাইভ ক্যালকুলেশন</span></div>
+        <div class="kpi-grid">
+          <div class="kpi b0"><small>মোট বিক্রি</small><strong>৳ ১,২৫,৪০০</strong></div>
+          <div class="kpi b1"><small>নগদ জমা</small><strong>৳ ৯৮,৫০০</strong></div>
+          <div class="kpi b5"><small>পার্টি বাকি</small><strong>৳ ২৬,৯০০</strong></div>
+          <div class="kpi b2"><small>মহাজন চালান</small><strong>৳ ১,১০,০০০</strong></div>
+        </div>
+        <div class="egg-row">
+          <div class="egg-pill"><span>🔴 লাল ডিম</span><span>৬,৫০০ পিস</span></div>
+          <div class="egg-pill"><span>⚪ সাদা ডিম</span><span>৪,২০০ পিস</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="sec-title"><span class="bar"></span>অ্যাপের মূল সুবিধাসমূহ</h2>
+      <div class="grid">
+        <div class="box b0 reveal">
+          <div class="box-head"><div class="ic">🧾</div><h3>ডিজিটাল ক্যাশ মেমো</h3></div>
+          <p>লাল, সাদা, হাঁস ও কোয়েলের ডিমসহ ১০০ ডিমের দর অনুযায়ী স্বয়ংক্রিয় মোট টাকা, নগদ জমা ও বাকির হিসাব।</p>
+        </div>
+        <div class="box b1 reveal">
+          <div class="box-head"><div class="ic">🚚</div><h3>মহাজনের ক্রয় ও চালান</h3></div>
+          <p>খামারি বা মহাজনের কাছ থেকে ডিম ক্রয়ের চালান, পাওনা-দেনা ও পরিশোধের সম্পূর্ণ ইতিহাস সংরক্ষণ।</p>
+        </div>
+        <div class="box b2 reveal">
+          <div class="box-head"><div class="ic">📒</div><h3>পার্টি ও মহাজন খাতা</h3></div>
+          <p>প্রতিটি পার্টি ও মহাজনের আলাদা খতিয়ান, ফোনবুক থেকে নম্বর যোগ, এক ক্লিকে কল ও জমার পর অবশিষ্ট বাকি হিসাব।</p>
+        </div>
+        <div class="box b3 reveal">
+          <div class="box-head"><div class="ic">📄</div><h3>পিডিএফ (PDF) ও শেয়ার</h3></div>
+          <p>আড়তের নাম-ঠিকানাসহ প্রফেশনাল মেমো ও চালান সরাসরি WhatsApp, ইমু বা মেসেঞ্জারে শেয়ার ও প্রিন্ট করুন।</p>
+        </div>
+        <div class="box b4 reveal">
+          <div class="box-head"><div class="ic">☁️</div><h3>অফলাইন ও ক্লাউড ব্যাকআপ</h3></div>
+          <p>ইন্টারনেট ছাড়াই অফলাইনে ব্যবহার করুন এবং Google Sign-In করে ক্লাউডে নিরাপদ ব্যাকআপ ও রিস্টোর রাখুন।</p>
+        </div>
+        <div class="box b5 reveal">
+          <div class="box-head"><div class="ic">📊</div><h3>তারিখভিত্তিক বিক্রয় রিপোর্ট</h3></div>
+          <p>আজকের, গতকালের বা যেকোনো পূর্বের তারিখের বিক্রয় তালিকা দেখে এক ক্লিকেই বিস্তারিত মেমো খুলুন।</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="screenshots">
+      <div class="wrap">
+        <h2 style="text-align:center">অ্যাপের স্ক্রিনশট</h2>
+        <p style="text-align:center;opacity:.75">আসল অ্যাপের পর্দা — যেমনটা ফোনে দেখবেন</p>
+        <div style="display:flex;gap:16px;overflow-x:auto;padding:14px 4px 20px;scroll-snap-type:x mandatory">
+          <img src="images/shot-1.jpg" alt="ডিমের হিসাব স্ক্রিনশট 1" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-2.jpg" alt="ডিমের হিসাব স্ক্রিনশট 2" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-3.jpg" alt="ডিমের হিসাব স্ক্রিনশট 3" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-4.jpg" alt="ডিমের হিসাব স্ক্রিনশট 4" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-5.jpg" alt="ডিমের হিসাব স্ক্রিনশট 5" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-6.jpg" alt="ডিমের হিসাব স্ক্রিনশট 6" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+        </div>
+      </div>
+    </section>
+    <section id="privacy">
+      <h2 class="sec-title"><span class="bar"></span>গোপনীয়তা নীতি (Privacy Policy)</h2>
+      <div class="policy reveal">
+        <p><strong>অ্যাপের নাম:</strong> ডিমের হিসাব (Dimer Hisab) • <strong>প্যাকেজ:</strong> <code>com.aistudio.dimerhisab.egghub</code> • <strong>সাল:</strong> ২০২৬</p>
+        <h3>১. সংগৃহীত তথ্য</h3>
+        <ul>
+          <li><strong>ব্যবসায়িক হিসাব:</strong> মেমো, চালান, পার্টি ও মহাজনের নাম, ফোন নম্বর এবং লেনদেনের হিসাব আপনার ডিভাইসে সংরক্ষিত থাকে।</li>
+          <li><strong>অ্যাকাউন্ট তথ্য (ঐচ্ছিক):</strong> ক্লাউড ব্যাকআপের জন্য Google Sign-In করলে আপনার নাম ও ইমেইল Firebase-এ নিরাপদে সংরক্ষিত হয়।</li>
+          <li><strong>ফোনবুক অ্যাক্সেস:</strong> নম্বর যুক্ত করতে অ্যান্ড্রয়েডের নিরাপদ সিস্টেম কন্টাক্ট পিকার ব্যবহৃত হয়; পুরো কন্টাক্ট লিস্ট কখনোই সংগ্রহ করা হয় না।</li>
+        </ul>
+        <h3>২. তথ্যের নিরাপত্তা</h3>
+        <p>সমস্ত ক্লাউড ডেটা এনক্রিপ্টেড (HTTPS/TLS) সংযোগে স্থানান্তরিত হয় এবং কোনো তৃতীয় পক্ষের কাছে বিক্রি বা শেয়ার করা হয় না।</p>
+        <h3>৩. অ্যাকাউন্ট ও ডেটা মুছে ফেলা</h3>
+        <p>যেকোনো সময় অ্যাপের <strong>সেটিংস → প্রোফাইল / অ্যাকাউন্ট ডিলিট</strong> থেকে অথবা আমাদের ইমেইলে যোগাযোগ করে আপনার অ্যাকাউন্ট ও ক্লাউড ডেটা স্থায়ীভাবে মুছে ফেলতে পারবেন।</p>
+        <h3>৪. বিজ্ঞাপন (AdMob)</h3>
+        <p>অ্যাপে Google AdMob বিজ্ঞাপন ব্যবহৃত হলে Google-এর নিজস্ব গোপনীয়তা নীতি প্রযোজ্য হবে।</p>
+      </div>
+    </section>
+
+    
+    <section id="faq">
+      <div class="wrap">
+        <h2 style="text-align:center">সাধারণ জিজ্ঞাসা</h2>
+        <details style="border:1px solid rgba(120,140,130,.35);border-radius:14px;padding:14px 18px;margin:10px 0"><summary style="cursor:pointer;font-weight:700">ডিমের হিসাব কাদের জন্য?</summary><p style="margin:10px 0 2px;opacity:.85">ডিমের আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের জন্য — প্রতিদিনের বিক্রি, স্টক ও বকেয়া হিসাব রাখতে।</p></details>
+        <details style="border:1px solid rgba(120,140,130,.35);border-radius:14px;padding:14px 18px;margin:10px 0"><summary style="cursor:pointer;font-weight:700">ক্যাশ মেমো কি প্রিন্ট করা যায়?</summary><p style="margin:10px 0 2px;opacity:.85">হ্যাঁ, অ্যাপ থেকে ডিজিটাল ক্যাশ মেমো তৈরি করে শেয়ার বা প্রিন্ট করা যায়।</p></details>
+        <details style="border:1px solid rgba(120,140,130,.35);border-radius:14px;padding:14px 18px;margin:10px 0"><summary style="cursor:pointer;font-weight:700">মহাজনের চালান ও বকেয়া হিসাব রাখা যাবে?</summary><p style="margin:10px 0 2px;opacity:.85">যাবে — মহাজন চালান, পার্টি বকেয়া ও নগদ জমার হিসাব আলাদাভাবে রাখা যায়।</p></details>
+        <details style="border:1px solid rgba(120,140,130,.35);border-radius:14px;padding:14px 18px;margin:10px 0"><summary style="cursor:pointer;font-weight:700">আমার ব্যবসার ডেটা কি নিরাপদ?</summary><p style="margin:10px 0 2px;opacity:.85">আপনার হিসাব আপনার ফোনেই সংরক্ষিত থাকে; আমরা আপনার ব্যক্তিগত তথ্য সংগ্রহ বা শেয়ার করি না।</p></details>
+      </div>
+    </section>
+    <section id="contact" class="contact reveal">
+      <div>
+        <h3>সহযোগিতা বা পরামর্শের জন্য যোগাযোগ করুন</h3>
+        <p>ইমেইল: anowar.hossain78699@gmail.com</p>
+      </div>
+      <a class="btn-primary" href="mailto:anowar.hossain78699@gmail.com">ইমেইল পাঠান</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© ২০২৬ ডিমের হিসাব (Dimer Hisab) • <a href="#privacy">Privacy Policy</a> • <a href="/app-ads.txt">app-ads.txt</a></p>
+      <p class="maker">নির্মাতা: আনোয়ার হোসেন — <a href="https://anowaranas.github.io/portfolio/" target="_blank" rel="noopener">পোর্টফোলিও দেখুন</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // থিম টগল (লাইট / ডার্ক) — পছন্দ মনে রাখা হয়
+    const btn = document.getElementById('themeBtn');
+    const applyThemeLabel = () => {
+      btn.textContent = document.body.classList.contains('dark') ? '☀️ লাইট' : '🌙 ডার্ক';
+    };
+    if (localStorage.getItem('dimerhisab_theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+    applyThemeLabel();
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('dimerhisab_theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      applyThemeLabel();
+    });
+
+    // স্ক্রল রিভিল অ্যানিমেশন
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('in'));
+    }
+  </script>
+
+<button id="langToggle" aria-label="Language" style="position:fixed;right:16px;bottom:16px;z-index:9999;background:#101418;color:#fff;border:none;padding:10px 18px;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.3)">EN</button>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(() => {}); }
+(function () {
+  const DICT = {"আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের অ্যাপ": "The app for egg wholesalers, traders & farmers", "আপনার ডিমের ব্যবসার শতভাগ নিখুঁত ডিজিটাল খাতা": "A 100% accurate digital ledger for your egg business", "অ্যাপের মূল সুবিধাসমূহ": "Key Features", "অ্যাপের স্ক্রিনশট": "App Screenshots", "আসল অ্যাপের পর্দা — যেমনটা ফোনে দেখবেন": "Real app screens — exactly as on your phone", "গোপনীয়তা নীতি (Privacy Policy)": "Privacy Policy", "সাধারণ জিজ্ঞাসা": "Frequently Asked Questions", "ডিজিটাল ক্যাশ মেমো": "Digital Cash Memo", "মহাজনের ক্রয় ও চালান": "Supplier Purchases & Invoices", "পার্টি ও মহাজন খাতা": "Party & Supplier Ledger", "পিডিএফ (PDF) ও শেয়ার": "PDF & Sharing", "অফলাইন ও ক্লাউড ব্যাকআপ": "Offline & Cloud Backup", "তারিখভিত্তিক বিক্রয় রিপোর্ট": "Date-wise Sales Reports", "সহযোগিতা বা পরামর্শের জন্য যোগাযোগ করুন": "Contact us for help or suggestions", "ইমেইল পাঠান": "Send Email", "ডিমের হিসাব কাদের জন্য?": "Who is Dimer Hisab for?", "ক্যাশ মেমো কি প্রিন্ট করা যায়?": "Can I print cash memos?", "মহাজনের চালান ও বকেয়া হিসাব রাখা যাবে?": "Can I track supplier invoices and dues?", "আমার ব্যবসার ডেটা কি নিরাপদ?": "Is my business data safe?"};
+  const KEY = 'workspace/dimerhisab_lang';
+  const btn = document.getElementById('langToggle');
+  function walk(node, fn) {
+    node.childNodes.forEach(c => {
+      if (c.nodeType === 3) fn(c);
+      else if (c.nodeType === 1 && !['SCRIPT','STYLE'].includes(c.tagName)) walk(c, fn);
+    });
+  }
+  function apply(lang) {
+    walk(document.body, n => {
+      const t = n.nodeValue.trim();
+      if (!t) return;
+      if (lang === 'en' && DICT[t]) n.nodeValue = n.nodeValue.replace(t, DICT[t]);
+      if (lang === 'bn') { for (const k in DICT) if (DICT[k] === t) n.nodeValue = n.nodeValue.replace(t, k); }
+    });
+    btn.textContent = lang === 'en' ? 'বাংলা' : 'EN';
+    localStorage.setItem(KEY, lang);
+  }
+  let cur = localStorage.getItem(KEY) || 'bn';
+  if (cur === 'en') apply('en');
+  btn.addEventListener('click', () => { cur = cur === 'en' ? 'bn' : 'en'; apply(cur); });
+})();
+</script>
+</body>
+</html>
