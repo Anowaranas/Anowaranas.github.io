@@ -10,13 +10,28 @@
 <meta property="og:description" content="পকেট হিসাব • ডিমের হিসাব • বাজার দর — শূন্য থেকে শুরু 🚀">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anowaranas.is-a.dev/">
-<meta property="og:image" content="https://anowaranas.is-a.dev/portfolio/images/photo.jpg">
+<meta property="og:site_name" content="Anuwar Hossen — Apps">
+<meta property="og:locale" content="bn_BD">
+<meta property="og:image" content="https://anowaranas.is-a.dev/portfolio/images/og-cover.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="আনোয়ার হোসেন — Android App Developer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anuwar Hossen — সব অ্যাপ একসাথে">
+<meta name="twitter:description" content="পকেট হিসাব • ডিমের হিসাব • বাজার দর — শূন্য থেকে শুরু 🚀">
+<meta name="twitter:image" content="https://anowaranas.is-a.dev/portfolio/images/og-cover.jpg">
+<meta name="twitter:image:alt" content="আনোয়ার হোসেন — Android App Developer">
+<meta name="theme-color" content="#16163a">
 <link rel="icon" href="/portfolio/images/photo.jpg">
+<link rel="preload" as="image" href="/portfolio/images/photo.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Anuwar Hossen — Apps","url":"https://anowaranas.is-a.dev/","author":{"@type":"Person","name":"Anuwar Hossen","url":"https://anowaranas.is-a.dev/portfolio/"}}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://anowaranas.is-a.dev/#website","name":"Anuwar Hossen — Apps","url":"https://anowaranas.is-a.dev/","inLanguage":"bn","author":{"@id":"https://anowaranas.is-a.dev/portfolio/#person"}},{"@type":"Person","@id":"https://anowaranas.is-a.dev/portfolio/#person","name":"Anuwar Hossen","alternateName":"আনোয়ার হোসেন","jobTitle":"Android App Developer","url":"https://anowaranas.is-a.dev/portfolio/","image":"https://anowaranas.is-a.dev/portfolio/images/photo.jpg","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"sameAs":["https://facebook.com/anuwar78699","https://github.com/Anowaranas","https://www.youtube.com/@AIDiyeAy","https://www.tiktok.com/@lost78699"]}]}
 </script>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-75L9Z9691P"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-75L9Z9691P');</script>
 <style>
@@ -93,11 +108,31 @@
   footer { text-align:center; color:var(--muted); font-size:13.5px; padding:32px 0 38px; }
   .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
   .reveal.on { opacity:1; transform:none; }
+  .apps .app-card:nth-child(2) { transition-delay:.08s; }
+  .apps .app-card:nth-child(3) { transition-delay:.16s; }
+  ::selection { background:rgba(255,201,60,.85); color:#241c00; }
+  :focus-visible { outline:3px solid var(--gold); outline-offset:3px; border-radius:6px; }
+  section[id] { scroll-margin-top:84px; }
+  #progress { position:fixed; top:0; left:0; height:3px; width:0; z-index:100;
+    background:linear-gradient(90deg,var(--green),var(--gold),var(--teal)); box-shadow:0 0 12px rgba(255,201,60,.55); }
+  .btn-gold:hover { box-shadow:0 20px 38px -8px rgba(255,201,60,.7); }
+  .btn-ghost:hover { border-color:rgba(255,201,60,.55); color:var(--gold); }
+  .lnk-play:hover, .lnk-site:hover { border-color:rgba(255,201,60,.55); }
+  .nav a { position:relative; }
+  .nav a::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; border-radius:2px;
+    background:linear-gradient(90deg,var(--green),var(--gold)); transition:width .25s ease; }
+  .nav a:hover::after { width:100%; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    .reveal { opacity:1; transform:none; }
+  }
   @media (max-width:640px){ .hero h1{font-size:32px;} .nav a{margin-left:11px; font-size:13.5px;} }
 </style>
 </head>
 <body>
-<div class="aurora"><i></i><i></i><i></i><i></i></div>
+<div id="progress" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <header>
   <div class="wrap nav">
     <div class="brand">আনোয়ার <span>হোসেন</span></div>
@@ -109,7 +144,7 @@
 
 <main class="wrap">
   <div class="hero">
-    <div class="avatar-ring"><img class="avatar" src="/portfolio/images/photo.jpg" alt="আনোয়ার হোসেন"></div>
+    <div class="avatar-ring"><img class="avatar" src="/portfolio/images/photo.jpg" alt="আনোয়ার হোসেন" width="150" height="150" fetchpriority="high" decoding="async"></div>
     <h1>আনোয়ার হোসেনের সব অ্যাপ একসাথে</h1>
     <p class="sub">Android App Developer 🇧🇩 — বাংলাদেশের ছোট ব্যবসায়ী, খামারি আর সাধারণ মানুষের জন্য বানানো তিনটি বাংলা অ্যাপ: হিসাব-নিকাশ আর প্রতিদিনের বাজারদর, সবই সহজ বাংলায়।</p>
     <div class="pill">🚀 শূন্য থেকে শুরু</div>
@@ -124,7 +159,7 @@
     <div class="apps">
       <div class="card app-card reveal">
         <div class="app-head">
-          <img src="/portfolio/images/pocket.png" alt="পকেট হিসাব আইকন">
+          <img src="/portfolio/images/pocket.png" alt="পকেট হিসাব আইকন" width="58" height="58" loading="lazy" decoding="async">
           <div><h3>পকেট হিসাব</h3><span class="status st-test">● টেস্টিং চলছে</span></div>
         </div>
         <p>দৈনিক আয়-ব্যয়, মাসিক বাজেট, বাকির খাতা ও ডিজিটাল ক্যাশ মেমোর স্মার্ট বাংলা অ্যাপ।</p>
@@ -135,7 +170,7 @@
       </div>
       <div class="card app-card reveal">
         <div class="app-head">
-          <img src="/portfolio/images/dimer.jpg" alt="ডিমের হিসাব আইকন">
+          <img src="/portfolio/images/dimer.jpg" alt="ডিমের হিসাব আইকন" width="58" height="58" loading="lazy" decoding="async">
           <div><h3>ডিমের হিসাব</h3><span class="status st-live">● Google Play-তে লাইভ</span></div>
         </div>
         <p>ডিমের আড়তদার ও পাইকারি ব্যবসায়ীদের জন্য ডিজিটাল খাতা, ক্যাশ মেমো ও মহাজন চালান অ্যাপ।</p>
@@ -146,7 +181,7 @@
       </div>
       <div class="card app-card reveal">
         <div class="app-head">
-          <img src="/portfolio/images/bazar.png" alt="বাজার দর আইকন">
+          <img src="/portfolio/images/bazar.png" alt="বাজার দর আইকন" width="58" height="58" loading="lazy" decoding="async">
           <div><h3>বাজার দর</h3><span class="status st-test">● টেস্টিং চলছে</span></div>
         </div>
         <p>ঢাকার প্রতিদিনের খুচরা ও পাইকারি বাজারদর — কৃষি বিপণন অধিদপ্তরের সরকারি তালিকা থেকে প্রতিদিন আপডেট।</p>
@@ -179,8 +214,10 @@
 
 <footer>© ২০২৬ আনোয়ার হোসেন • শূন্য থেকে শুরু 🚀 • ঢাকা, বাংলাদেশ</footer>
 <script>
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); setTimeout(() => { e.target.style.transitionDelay = '0ms'; }, 900); } }), { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const bar = document.getElementById('progress');
+  addEventListener('scroll', () => { const h = document.documentElement; const max = h.scrollHeight - h.clientHeight; bar.style.width = (max > 0 ? h.scrollTop / max * 100 : 0) + '%'; }, { passive: true });
 </script>
 </body>
 </html>
