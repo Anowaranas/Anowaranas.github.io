@@ -37,24 +37,55 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   :root {
-    --surface:rgba(255,255,255,.055); --surface2:rgba(255,255,255,.09); --border:rgba(255,255,255,.14);
-    --text:#f2f5fa; --muted:#b9c4d6; --gold:#ffc93c; --green:#2fbf71; --teal:#19b8a6; --violet:#7a5cff;
+    /* ── Shared site color system — identical tokens in hub + portfolio ── */
+    /* Backgrounds */
+    --bg-base:#16163a; --bg-teal:#0e2a3f; --bg-deep:#12122e;
+    --bg-header:rgba(13,19,38,.55);
+    --bg-gradient:linear-gradient(160deg,var(--bg-base) 0%,var(--bg-teal) 100%);
+    /* Glass surfaces & borders */
+    --surface:rgba(255,255,255,.055); --surface-2:rgba(255,255,255,.08); --surface-icon:rgba(255,255,255,.1);
+    --border:rgba(255,255,255,.14); --border-strong:rgba(255,255,255,.25);
+    /* Text */
+    --text:#f2f5fa; --muted:#b9c4d6; --white:#fff;
+    /* Accents */
+    --gold:#ffc93c; --gold-light:#ffd964; --gold-deep:#ffb52e; --on-gold:#241c00;
+    --mint:#7dffbe; --green:#2fbf71; --teal:#19b8a6; --violet:#7a5cff;
+    /* Gold alpha family — pills, borders, glows, selection */
+    --gold-soft:rgba(255,201,60,.13); --gold-border:rgba(255,201,60,.5);
+    --gold-glow:rgba(255,201,60,.55); --gold-glow-strong:rgba(255,201,60,.7);
+    --selection:rgba(255,201,60,.85);
+    /* Success / live status */
+    --success-text:#5eeaa0; --on-success:#06251b;
+    --success-soft:rgba(47,191,113,.18); --success-border:rgba(47,191,113,.5); --success-glow:rgba(47,191,113,.6);
+    /* Gradients */
+    --gradient-accent:linear-gradient(90deg,var(--green),var(--gold),var(--teal));
+    --gradient-heading:linear-gradient(90deg,var(--mint),var(--gold),var(--mint));
+    --gradient-gold:linear-gradient(135deg,var(--gold-light),var(--gold-deep));
+    --gradient-step:linear-gradient(135deg,var(--green),var(--teal));
+    --gradient-bar:linear-gradient(180deg,var(--green),var(--gold));
+    --gradient-link:linear-gradient(90deg,var(--green),var(--gold));
+    --ring-gradient:conic-gradient(from 120deg,var(--green),var(--gold),var(--teal),var(--violet),var(--green));
+    /* Shadows, focus, misc */
+    --shadow-sm:rgba(0,0,0,.35); --shadow:rgba(0,0,0,.5); --shadow-lg:rgba(0,0,0,.65);
+    --focus:var(--gold);
+    --play-bg:#101418;
+    --brand-youtube:rgba(255,60,60,.16); --brand-facebook:rgba(24,119,242,.18);
   }
   html { scroll-behavior:smooth; }
   body {
     font-family:'Hind Siliguri',sans-serif; color:var(--text); min-height:100vh; overflow-x:hidden;
-    background:linear-gradient(160deg,#16163a 0%,#0e2a3f 100%); background-attachment:fixed;
+    background:var(--bg-gradient); background-attachment:fixed;
   }
   .aurora { position:fixed; inset:0; z-index:-1; overflow:hidden; }
   .aurora i { position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; }
-  .aurora i:nth-child(1){ width:480px;height:480px; background:#2fbf71; top:-140px; left:-120px; animation:drift1 16s ease-in-out infinite alternate; }
-  .aurora i:nth-child(2){ width:420px;height:420px; background:#19b8a6; top:-100px; right:-110px; animation:drift2 20s ease-in-out infinite alternate; }
-  .aurora i:nth-child(3){ width:380px;height:380px; background:#7a5cff; bottom:-150px; left:32%; animation:drift1 22s ease-in-out infinite alternate-reverse; }
-  .aurora i:nth-child(4){ width:300px;height:300px; background:#ffc93c; bottom:-120px; right:12%; opacity:.28; animation:drift2 18s ease-in-out infinite alternate-reverse; }
+  .aurora i:nth-child(1){ width:480px;height:480px; background:var(--green); top:-140px; left:-120px; animation:drift1 16s ease-in-out infinite alternate; }
+  .aurora i:nth-child(2){ width:420px;height:420px; background:var(--teal); top:-100px; right:-110px; animation:drift2 20s ease-in-out infinite alternate; }
+  .aurora i:nth-child(3){ width:380px;height:380px; background:var(--violet); bottom:-150px; left:32%; animation:drift1 22s ease-in-out infinite alternate-reverse; }
+  .aurora i:nth-child(4){ width:300px;height:300px; background:var(--gold); bottom:-120px; right:12%; opacity:.28; animation:drift2 18s ease-in-out infinite alternate-reverse; }
   @keyframes drift1 { from{transform:translate(0,0) scale(1);} to{transform:translate(90px,60px) scale(1.15);} }
   @keyframes drift2 { from{transform:translate(0,0) scale(1.1);} to{transform:translate(-80px,70px) scale(.95);} }
   .wrap { max-width:1040px; margin:0 auto; padding:0 18px; }
-  header { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:rgba(13,19,38,.55); border-bottom:1px solid var(--border); }
+  header { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:var(--bg-header); border-bottom:1px solid var(--border); }
   .nav { display:flex; justify-content:space-between; align-items:center; padding:13px 0; }
   .brand { font-family:'Baloo Da 2',cursive; font-weight:800; font-size:21px; }
   .brand span { color:var(--gold); }
@@ -62,66 +93,69 @@
   .nav a:hover { color:var(--gold); }
   .hero { text-align:center; padding:66px 0 8px; }
   .avatar-ring { width:182px; height:182px; margin:0 auto; border-radius:50%; padding:5px;
-    background:conic-gradient(from 120deg,#2fbf71,#ffc93c,#19b8a6,#7a5cff,#2fbf71); animation:spin 9s linear infinite;
-    box-shadow:0 20px 55px rgba(0,0,0,.5); }
+    background:var(--ring-gradient); animation:spin 9s linear infinite;
+    box-shadow:0 20px 55px var(--shadow); }
   @keyframes spin { to { transform:rotate(360deg); } }
-  .avatar { width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; border:4px solid #12122e; }
+  .avatar { width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; border:4px solid var(--bg-deep); }
   .hero h1 { font-family:'Baloo Da 2',cursive; font-size:48px; font-weight:800; margin-top:24px; line-height:1.2;
-    background:linear-gradient(90deg,#7dffbe,#ffc93c,#7dffbe); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    background:var(--gradient-heading); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
     animation:shine 5s linear infinite; }
   @keyframes shine { to { background-position:200% center; } }
   .hero .role { font-size:19px; font-weight:600; margin-top:6px; }
   .hero .tag { color:var(--muted); font-size:16px; margin:12px auto 0; max-width:640px; line-height:1.65; }
-  .pill { display:inline-block; margin-top:16px; background:rgba(255,201,60,.13); border:1px solid rgba(255,201,60,.5);
+  .pill { display:inline-block; margin-top:16px; background:var(--gold-soft); border:1px solid var(--gold-border);
     color:var(--gold); font-weight:700; font-size:14px; padding:7px 18px; border-radius:999px; }
   .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
   .btn { text-decoration:none; font-weight:700; font-size:15px; padding:12px 24px; border-radius:12px; transition:transform .2s ease, box-shadow .2s ease; display:inline-block; }
   .btn:hover { transform:translateY(-3px); }
-  .btn-gold { background:linear-gradient(135deg,#ffd964,#ffb52e); color:#241c00; box-shadow:0 14px 30px -8px rgba(255,201,60,.55); }
+  .btn-gold { background:var(--gradient-gold); color:var(--on-gold); box-shadow:0 14px 30px -8px var(--gold-glow); }
   .btn-ghost { background:var(--surface); color:var(--text); border:1.4px solid var(--border); }
   .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:40px; }
   .stat { text-align:center; padding:20px 10px; }
   .stat .num { font-family:'Baloo Da 2',cursive; font-size:34px; font-weight:800;
-    background:linear-gradient(90deg,#7dffbe,#ffc93c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    background:var(--gradient-heading); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .stat .lbl { color:var(--muted); font-size:13.5px; font-weight:600; margin-top:2px; }
   section { padding:40px 0 4px; }
   .sec-title { font-family:'Baloo Da 2',cursive; font-size:27px; font-weight:800; display:flex; align-items:center; gap:11px; margin-bottom:16px; }
-  .sec-title::before { content:""; width:5px; height:26px; border-radius:99px; background:linear-gradient(180deg,var(--green),var(--gold)); }
+  .sec-title::before { content:""; width:5px; height:26px; border-radius:99px; background:var(--gradient-bar); }
   .card { background:var(--surface); border:1.4px solid var(--border); border-radius:20px; padding:22px; backdrop-filter:blur(10px); }
   .about p { color:var(--muted); font-size:16px; line-height:1.75; }
   .about p + p { margin-top:10px; }
   .about strong { color:var(--text); }
   .chips { display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
-  .chip { font-size:13.5px; font-weight:600; padding:7px 14px; border-radius:999px; background:var(--surface2); border:1px solid var(--border); }
+  .chip { font-size:13.5px; font-weight:600; padding:7px 14px; border-radius:999px; background:var(--surface-2); border:1px solid var(--border); }
   .chip b { color:var(--gold); }
   .apps { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
   .app-card { position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s; }
-  .app-card::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:linear-gradient(90deg,var(--green),var(--gold),var(--teal)); }
-  .app-card:hover { transform:translateY(-7px); box-shadow:0 26px 44px -18px rgba(0,0,0,.65); border-color:rgba(255,201,60,.45); }
+  .app-card::before { content:""; position:absolute; inset:0 0 auto 0; height:4px; background:var(--gradient-accent); }
+  .app-card:hover { transform:translateY(-7px); box-shadow:0 26px 44px -18px var(--shadow-lg); border-color:var(--gold-border); }
   .app-head { display:flex; align-items:center; gap:14px; margin-bottom:10px; }
-  .app-head img { width:58px; height:58px; border-radius:15px; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+  .app-head img { width:58px; height:58px; border-radius:15px; box-shadow:0 8px 18px var(--shadow-sm); }
   .app-head h3 { font-family:'Baloo Da 2',cursive; font-size:21px; font-weight:800; }
   .status { font-size:12px; font-weight:700; padding:3px 11px; border-radius:999px; }
-  .st-live { background:rgba(47,191,113,.18); color:#5eeaa0; border:1px solid rgba(47,191,113,.5); }
-  .st-test { background:rgba(255,201,60,.14); color:var(--gold); border:1px solid rgba(255,201,60,.45); }
+  .st-live { background:var(--success-soft); color:var(--success-text); border:1px solid var(--success-border); }
+  .st-test { background:var(--gold-soft); color:var(--gold); border:1px solid var(--gold-border); }
   .app-card p { color:var(--muted); font-size:14.5px; line-height:1.65; min-height:72px; }
   .app-links { display:flex; gap:9px; margin-top:13px; flex-wrap:wrap; }
   .app-links a { text-decoration:none; font-size:13.5px; font-weight:700; padding:8px 15px; border-radius:10px; transition:transform .2s; }
   .app-links a:hover { transform:translateY(-2px); }
-  .lnk-play { background:#101418; color:#fff; border:1px solid rgba(255,255,255,.25); }
-  .lnk-site { background:rgba(255,255,255,.08); color:var(--text); border:1px solid var(--border); }
+  .lnk-play { background:var(--play-bg); color:var(--white); border:1px solid var(--border-strong); }
+  .lnk-site { background:var(--surface-2); color:var(--text); border:1px solid var(--border); }
   .socials { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
   .soc { display:flex; align-items:center; gap:13px; text-decoration:none; color:var(--text); transition:transform .2s ease, border-color .2s; }
-  .soc:hover { transform:translateY(-4px); border-color:rgba(255,201,60,.45); }
+  .soc:hover { transform:translateY(-4px); border-color:var(--gold-border); }
   .soc .ic { width:46px; height:46px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:21px; flex:0 0 auto; }
+  .ic-yt { background:var(--brand-youtube); }
+  .ic-fb { background:var(--brand-facebook); }
+  .ic-soft { background:var(--surface-icon); }
   .soc h4 { font-size:16px; font-weight:700; }
   .soc small { color:var(--muted); font-size:13px; }
   .journey { display:grid; gap:12px; }
   .step { display:flex; gap:15px; align-items:flex-start; transition:transform .2s ease; }
   .step:hover { transform:translateX(5px); }
   .step .n { font-family:'Baloo Da 2',cursive; font-weight:800; font-size:19px; width:42px; height:42px; flex:0 0 auto;
-    border-radius:50%; background:linear-gradient(135deg,var(--green),var(--teal)); color:#06251b;
-    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px rgba(47,191,113,.6); }
+    border-radius:50%; background:var(--gradient-step); color:var(--on-success);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -6px var(--success-glow); }
   .step h4 { font-size:16.5px; font-weight:700; }
   .step p { color:var(--muted); font-size:14.5px; line-height:1.6; }
   .contact { text-align:center; padding:28px; }
@@ -135,21 +169,21 @@
   .stats .stat:nth-child(2) { transition-delay:.07s; }
   .stats .stat:nth-child(3) { transition-delay:.14s; }
   .stats .stat:nth-child(4) { transition-delay:.21s; }
-  ::selection { background:rgba(255,201,60,.85); color:#241c00; }
-  :focus-visible { outline:3px solid var(--gold); outline-offset:3px; border-radius:6px; }
+  ::selection { background:var(--selection); color:var(--on-gold); }
+  :focus-visible { outline:3px solid var(--focus); outline-offset:3px; border-radius:6px; }
   section[id] { scroll-margin-top:84px; }
   #progress { position:fixed; top:0; left:0; height:3px; width:0; z-index:100;
-    background:linear-gradient(90deg,var(--green),var(--gold),var(--teal)); box-shadow:0 0 12px rgba(255,201,60,.55); }
-  .btn-gold:hover { box-shadow:0 20px 38px -8px rgba(255,201,60,.7); }
-  .btn-ghost:hover { border-color:rgba(255,201,60,.55); color:var(--gold); }
-  .lnk-play:hover, .lnk-site:hover { border-color:rgba(255,201,60,.55); }
+    background:var(--gradient-accent); box-shadow:0 0 12px var(--gold-glow); }
+  .btn-gold:hover { box-shadow:0 20px 38px -8px var(--gold-glow-strong); }
+  .btn-ghost:hover { border-color:var(--gold-border); color:var(--gold); }
+  .lnk-play:hover, .lnk-site:hover { border-color:var(--gold-border); }
   .chip { transition:transform .2s ease, border-color .2s; }
-  .chip:hover { transform:translateY(-2px); border-color:rgba(255,201,60,.5); }
+  .chip:hover { transform:translateY(-2px); border-color:var(--gold-border); }
   .stat { transition:transform .25s ease, border-color .25s; }
-  .stat:hover { transform:translateY(-4px); border-color:rgba(255,201,60,.4); }
+  .stat:hover { transform:translateY(-4px); border-color:var(--gold-border); }
   .nav a { position:relative; }
   .nav a::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; border-radius:2px;
-    background:linear-gradient(90deg,var(--green),var(--gold)); transition:width .25s ease; }
+    background:var(--gradient-link); transition:width .25s ease; }
   .nav a:hover::after { width:100%; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior:auto; }
@@ -257,10 +291,10 @@
   <section id="social">
     <h2 class="sec-title">আমাকে ফলো করুন</h2>
     <div class="socials">
-      <a class="card soc reveal" href="https://www.youtube.com/@AIDiyeAy" target="_blank" rel="noopener"><div class="ic" style="background:rgba(255,60,60,.16)">▶️</div><div><h4>YouTube</h4><small>AI দিয়ে আয় | শূন্য থেকে শুরু</small></div></a>
-      <a class="card soc reveal" href="https://www.tiktok.com/@lost78699" target="_blank" rel="noopener"><div class="ic" style="background:rgba(255,255,255,.1)">🎵</div><div><h4>TikTok</h4><small>প্রতিদিনের AI টিপস ও কৌশল</small></div></a>
-      <a class="card soc reveal" href="https://facebook.com/anuwar78699" target="_blank" rel="noopener"><div class="ic" style="background:rgba(24,119,242,.18)">📘</div><div><h4>Facebook</h4><small>Anuwar Hossen</small></div></a>
-      <a class="card soc reveal" href="https://github.com/Anowaranas" target="_blank" rel="noopener"><div class="ic" style="background:rgba(255,255,255,.1)">💻</div><div><h4>GitHub</h4><small>@Anowaranas</small></div></a>
+      <a class="card soc reveal" href="https://www.youtube.com/@AIDiyeAy" target="_blank" rel="noopener"><div class="ic ic-yt">▶️</div><div><h4>YouTube</h4><small>AI দিয়ে আয় | শূন্য থেকে শুরু</small></div></a>
+      <a class="card soc reveal" href="https://www.tiktok.com/@lost78699" target="_blank" rel="noopener"><div class="ic ic-soft">🎵</div><div><h4>TikTok</h4><small>প্রতিদিনের AI টিপস ও কৌশল</small></div></a>
+      <a class="card soc reveal" href="https://facebook.com/anuwar78699" target="_blank" rel="noopener"><div class="ic ic-fb">📘</div><div><h4>Facebook</h4><small>Anuwar Hossen</small></div></a>
+      <a class="card soc reveal" href="https://github.com/Anowaranas" target="_blank" rel="noopener"><div class="ic ic-soft">💻</div><div><h4>GitHub</h4><small>@Anowaranas</small></div></a>
     </div>
   </section>
 
