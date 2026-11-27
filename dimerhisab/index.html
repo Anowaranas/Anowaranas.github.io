@@ -12,6 +12,14 @@
   <meta property="og:url" content="https://anowaranas.is-a.dev/dimerhisab/" />
   <meta property="og:image" content="https://anowaranas.is-a.dev/dimerhisab/images/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ডিমের হিসাব — ডিজিটাল আড়ত খাতা ও ক্যাশ মেমো" />
+  <meta name="twitter:description" content="ডিমের আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের জন্য ডিজিটাল হিসাব খাতা, ক্যাশ মেমো ও মহাজন চালান অ্যাপ। Google Play থেকে ফ্রি ডাউনলোড করুন।" />
+  <meta name="twitter:image" content="https://anowaranas.is-a.dev/dimerhisab/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="ডিমের হিসাব — ডিজিটাল আড়ত খাতা অ্যাপ" />
+  <meta property="og:locale" content="bn_BD" />
   <meta name="theme-color" content="#047857" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='74' font-size='66' text-anchor='middle'>🥚</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -288,6 +296,12 @@
     }
     .maker a:hover { text-decoration: underline; }
 
+    /* ============ অ্যাক্সেসিবিলিটি ============ */
+    :focus-visible { outline: 3px solid #D97706; outline-offset: 2px; border-radius: 6px; }
+    body.dark :focus-visible { outline-color: #FFC93C; }
+    .skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; background: #047857; color: #fff; padding: 10px 18px; border-radius: 99px; font-weight: 700; text-decoration: none; transition: top .25s ease; box-shadow: 0 8px 22px rgba(0,0,0,.3); }
+    .skip-link:focus { top: 12px; }
+
     /* ============ স্ক্রল রিভিল ============ */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.in { opacity: 1; transform: none; }
@@ -315,6 +329,9 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ডিমের হিসাব","operatingSystem":"ANDROID","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"BDT"},"url":"https://anowaranas.is-a.dev/dimerhisab/","downloadUrl":"https://play.google.com/store/apps/details?id=com.aistudio.dimerhisab.egghub","author":{"@type":"Person","name":"Anuwar Hossen"}}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ডিমের হিসাব কাদের জন্য?", "acceptedAnswer": {"@type": "Answer", "text": "ডিমের আড়তদার, পাইকারি ব্যবসায়ী ও খামারিদের জন্য — প্রতিদিনের বিক্রি, স্টক ও বকেয়া হিসাব রাখতে।"}}, {"@type": "Question", "name": "ক্যাশ মেমো কি প্রিন্ট করা যায়?", "acceptedAnswer": {"@type": "Answer", "text": "হ্যাঁ, অ্যাপ থেকে ডিজিটাল ক্যাশ মেমো তৈরি করে শেয়ার বা প্রিন্ট করা যায়।"}}, {"@type": "Question", "name": "মহাজনের চালান ও বকেয়া হিসাব রাখা যাবে?", "acceptedAnswer": {"@type": "Answer", "text": "যাবে — মহাজন চালান, পার্টি বকেয়া ও নগদ জমার হিসাব আলাদাভাবে রাখা যায়।"}}, {"@type": "Question", "name": "আমার ব্যবসার ডেটা কি নিরাপদ?", "acceptedAnswer": {"@type": "Answer", "text": "আপনার হিসাব আপনার ফোনেই সংরক্ষিত থাকে; আমরা আপনার ব্যক্তিগত তথ্য সংগ্রহ বা শেয়ার করি না।"}}]}
+</script>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-75L9Z9691P"></script>
 <script>
@@ -327,6 +344,7 @@ gtag('config', 'G-75L9Z9691P');
 </head>
 <body>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<a class="skip-link" href="#home">মূল কনটেন্টে যান</a>
 
   <header class="topbar">
     <div class="wrap topbar-inner">
@@ -338,7 +356,7 @@ gtag('config', 'G-75L9Z9691P');
             <div class="brand-sub"><span class="dot"></span> ডিজিটাল আড়ত খাতা • অফলাইন ও ক্লাউড সিঙ্ক</div>
           </div>
         </div>
-        <button class="theme-btn" id="themeBtn" type="button">🌙 ডার্ক</button>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="থিম পরিবর্তন করুন">🌙 ডার্ক</button>
       </div>
       <nav class="capsule-nav" aria-label="প্রধান মেনু">
         <a class="nav-pill active" href="#home">হোম</a>
@@ -413,12 +431,12 @@ gtag('config', 'G-75L9Z9691P');
         <h2 style="text-align:center">অ্যাপের স্ক্রিনশট</h2>
         <p style="text-align:center;opacity:.75">আসল অ্যাপের পর্দা — যেমনটা ফোনে দেখবেন</p>
         <div style="display:flex;gap:16px;overflow-x:auto;padding:14px 4px 20px;scroll-snap-type:x mandatory">
-          <img src="images/shot-1.jpg" alt="ডিমের হিসাব স্ক্রিনশট 1" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
-          <img src="images/shot-2.jpg" alt="ডিমের হিসাব স্ক্রিনশট 2" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
-          <img src="images/shot-3.jpg" alt="ডিমের হিসাব স্ক্রিনশট 3" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
-          <img src="images/shot-4.jpg" alt="ডিমের হিসাব স্ক্রিনশট 4" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
-          <img src="images/shot-5.jpg" alt="ডিমের হিসাব স্ক্রিনশট 5" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
-          <img src="images/shot-6.jpg" alt="ডিমের হিসাব স্ক্রিনশট 6" loading="lazy" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-1.jpg" alt="ডিমের হিসাব অ্যাপের মাসিক ও সাপ্তাহিক রিপোর্ট স্ক্রিন" loading="lazy" decoding="async" width="500" height="895" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-2.jpg" alt="ডিমের হিসাব অ্যাপের মেমো ও মহাজন চালানের তালিকা স্ক্রিন" loading="lazy" decoding="async" width="500" height="895" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-3.jpg" alt="ডিমের হিসাব অ্যাপের আড়তের হিসাব ড্যাশবোর্ড স্ক্রিন" loading="lazy" decoding="async" width="500" height="895" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-4.jpg" alt="ডিমের হিসাব অ্যাপের ফিঙ্গারপ্রিন্ট লক ও ক্লাউড ব্যাকআপ স্ক্রিন" loading="lazy" decoding="async" width="500" height="895" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-5.jpg" alt="ডিমের হিসাব অ্যাপের ডিজিটাল বিক্রয় মেমো তৈরির স্ক্রিন" loading="lazy" decoding="async" width="500" height="895" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
+          <img src="images/shot-6.jpg" alt="ডিমের হিসাব অ্যাপের পার্টি ও মহাজনের বাকি-পাওনার খাতা স্ক্রিন" loading="lazy" decoding="async" width="500" height="895" style="width:230px;flex:0 0 auto;border-radius:18px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(2,32,20,.20)">
         </div>
       </div>
     </section>
