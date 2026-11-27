@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anowaranas.github.io/sitemap.xml
-Sitemap: https://anowaranas.github.io/dimerhisab/sitemap.xml
-Sitemap: https://anowaranas.github.io/pokethisab/sitemap.xml
-Sitemap: https://anowaranas.github.io/bazardor/sitemap.xml
+Sitemap: https://anowaranas.is-a.dev/sitemap.xml
+Sitemap: https://anowaranas.is-a.dev/dimerhisab/sitemap.xml
+Sitemap: https://anowaranas.is-a.dev/pokethisab/sitemap.xml
+Sitemap: https://anowaranas.is-a.dev/bazardor/sitemap.xml
